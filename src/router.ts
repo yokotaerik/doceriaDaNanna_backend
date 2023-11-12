@@ -27,7 +27,7 @@ router.get('/category', isAuthenthicated, new CategoryController().getCategories
 
 
 router.post('/product', isAuthenthicated, upload.single('file'), new ProductController().createProduct)
-router.get('/category/product', isAuthenthicated, upload.single('file'), new ProductController().findProductsByCategory)
+    router.get('/category/product', isAuthenthicated, upload.single('file'), new ProductController().findProductsByCategory)
 
 
 
@@ -38,7 +38,7 @@ router.delete('/order/delete', isAuthenthicated, new OrderController().deleteIte
 router.put('/order/send', isAuthenthicated, new OrderController().sendOrder)
 router.put('/order/finish', isAuthenthicated, new OrderController().finishOrder)
 router.get('/order', isAuthenthicated, new OrderController().listOrders)
-router.get('/order/detail', isAuthenthicated, new OrderController().getDetails)
+router.get('/order/detail', isAuthenthicated, new OrderController().getDetail)
 
 
 

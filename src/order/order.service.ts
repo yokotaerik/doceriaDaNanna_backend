@@ -116,18 +116,18 @@ export class OrderService{
 
     async getDetails({ order_id }: OrderIdRequest){
         
-
         const orders = await prismaClient.item.findMany({
-            where: {
-                order_id
+            where:{
+              order_id: order_id
             },
             include:{
-                product:true,
-                order: true
+              product:true,
+              order:true,
             }
-        })
-
-        return orders
+          })
+      
+          return orders;
+      
     }
 
 
